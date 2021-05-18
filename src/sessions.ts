@@ -74,6 +74,7 @@ export type ClientSessionEvents = {
   ended(session: ClientSession): void;
 };
 
+/** @internal */
 const kServerSession = Symbol('serverSession');
 
 /**
@@ -83,18 +84,23 @@ const kServerSession = Symbol('serverSession');
  * @public
  */
 class ClientSession extends TypedEventEmitter<ClientSessionEvents> {
+  /** @internal */
   topology: Topology;
   /** @internal */
   sessionPool: ServerSessionPool;
   hasEnded: boolean;
   clientOptions?: MongoOptions;
   supports: { causalConsistency: boolean };
+  /** @internal */
   clusterTime?: ClusterTime;
+  /** @internal */
   operationTime?: Timestamp;
   explicit: boolean;
+  /** @internal */
   owner?: symbol | AbstractCursor;
   defaultTransactionOptions: TransactionOptions;
   transaction: Transaction;
+  /** @internal */
   [kServerSession]?: ServerSession;
 
   /**

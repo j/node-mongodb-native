@@ -18,6 +18,7 @@ const MESSAGE_HEADER_SIZE = 16;
 const COMPRESSION_DETAILS_SIZE = 9; // originalOpcode + uncompressedSize, compressorID
 
 const kDefaultMaxBsonMessageSize = 1024 * 1024 * 16 * 4;
+/** @internal */
 const kBuffer = Symbol('buffer');
 
 /** @internal */
