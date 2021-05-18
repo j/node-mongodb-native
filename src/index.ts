@@ -365,5 +365,6 @@ export type {
   InferIdType,
   ProjectionOperators,
   MetaProjectionOperators,
-  MetaSortOperators
+  MetaSortOperators,
+  DenqueLike
 } from './mongo_types';
